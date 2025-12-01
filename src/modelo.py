@@ -61,7 +61,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 # Configuracion de rutas
 RUTA_PROYECTO = Path(__file__).parent.parent
-RUTA_DATOS = RUTA_PROYECTO / "data" / "partidas.csv"
+RUTA_DATOS = RUTA_PROYECTO / "data" / "resultados_juego.csv"
 RUTA_MODELO = RUTA_PROYECTO / "models" / "modelo_entrenado.pkl"
 
 # Mapeo de jugadas a numeros (para el modelo)
@@ -97,8 +97,15 @@ def cargar_datos(ruta_csv: str = None) -> pd.DataFrame:
 
     # TODO: Implementa la carga de datos
     # Pista: usa pd.read_csv()
+        try:
+            df = pd.read_csv(ruta_csv)
+            return df
+        except FileNotFoundError:
+            print(f"El archivo {ruta_csv} no existe.")
 
-    pass  # Elimina esta linea cuando implementes
+
+
+    return None
 
 
 def preparar_datos(df: pd.DataFrame) -> pd.DataFrame:
@@ -121,8 +128,20 @@ def preparar_datos(df: pd.DataFrame) -> pd.DataFrame:
     # - Usa map() con JUGADA_A_NUM para convertir jugadas a numeros
     # - Usa shift(-1) para crear la columna de proxima jugada
     # - Usa dropna() para eliminar filas con NaN
+    df = df.copy()
 
-    pass  # Elimina esta linea cuando implementes
+    df['jugada_j1'] = df['jugada_j1'].map(JUGADA_A_NUM)
+    df['jugada_j2'] = df['jugada_j2'].map(JUGADA_A_NUM)
+
+    df['proxima_jugada_j2'] = df['jugada_j2'].shift(-1)
+
+    df.dropna(subset=['proxima_jugada_j2'], inplace=True)
+
+    df['proxima_jugada_j2'] = df['proxima_jugada_j2'].astype(int)
+
+
+    return df
+
 
 
 # =============================================================================
@@ -376,14 +395,15 @@ def main():
 
     # TODO: Implementa el flujo completo:
     # 1. Cargar datos
+    df = cargar_datos('/Users/diego/PycharmProjects/rps-ai-bocatalomo/data/resultados_juego.csv')
     # 2. Preparar datos
     # 3. Crear features
     # 4. Seleccionar features
     # 5. Entrenar modelo
     # 6. Guardar modelo
 
-    print("\n[!] Implementa las funciones marcadas con TODO")
-    print("[!] Luego ejecuta este script para entrenar tu modelo")
+    #print("\n[!] Implementa las funciones marcadas con TODO")
+    #print("[!] Luego ejecuta este script para entrenar tu modelo")
 
 
 if __name__ == "__main__":
