@@ -2,7 +2,7 @@
 RPSAI - JUEGO INTERACTIVO (Piedra, Papel o Tijera)
 ===================================================
 Juego interactivo de RPS contra la IA, con temporizador y teclado.
-Juega 50 rondas consecutivas sin interrupción.
+Juega 15 rondas consecutivas sin interrupción.
 """
 
 import time
@@ -65,7 +65,7 @@ def obtener_nota(winrate: float) -> tuple:
 class JuegoRPS:
     """Clase principal para ejecutar el juego interactivo."""
 
-    def __init__(self, num_rondas: int = 50):
+    def __init__(self, num_rondas: int = 15): # <--- CAMBIO AQUÍ (Valor por defecto)
         self.num_rondas = num_rondas
         self.ia = JugadorIA()
 
@@ -184,11 +184,9 @@ class JuegoRPS:
     def mostrar_progreso_final(self):
         """Muestra el resumen de estadísticas al final del juego."""
 
-        # EL AJUSTE CLAVE: El total de rondas para el Winrate es Victories + Losses + Empates
         total_rondas_winrate = self.victorias_ia + self.derrotas_ia + self.empates
 
         if total_rondas_winrate > 0:
-            # Winrate = Victorias / (Total de Rondas)
             winrate = self.victorias_ia / total_rondas_winrate * 100
         else:
             winrate = 0
@@ -201,7 +199,6 @@ class JuegoRPS:
         print(f"   Derrotas IA: {self.derrotas_ia}")
         print(f"   Empates: {self.empates}")
 
-        # NOTA DE CÁLCULO
         print(f"\n   [Cálculo]: Winrate = Victorias / (Total de Rondas)")
         print(f"   {COLOR_CYAN}WINRATE FINAL (Empates = Derrotas): {winrate:.1f}%{COLOR_RESET}")
 
@@ -236,7 +233,6 @@ class JuegoRPS:
         self.listener.stop()
 
         # 3. Evaluar y mostrar
-        # Los contadores de V/D/E se actualizan dentro de determinar_ganador
         resultado = self.determinar_ganador(self.jugada_humano, jugada_ia)
         self.mostrar_resultado(self.jugada_humano, jugada_ia,
                                self.tiempo_humano, tiempo_ia, resultado)
@@ -266,7 +262,8 @@ class JuegoRPS:
 
 def main():
     """Función principal."""
-    juego = JuegoRPS(num_rondas=50)
+    # MODIFICADO: Llamamos a JuegoRPS con num_rondas=15
+    juego = JuegoRPS(num_rondas=15)
     juego.iniciar_juego()
 
 

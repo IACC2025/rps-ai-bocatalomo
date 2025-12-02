@@ -89,3 +89,78 @@ Ronda,Jugador 1,Jugador 2,Ganador,Tiempo Jugador 1,Tiempo Jugador 2
 13,tijera,papel,Jugador 1,0.975,0.9
 14,papel,piedra,Jugador 1,0.971,0.749
 15,piedra,tijera,Jugador 1,0.188,0.473
+1,papel,piedra,Jugador 1,1.664,1.713
+2,piedra,piedra,Empate,1.116,1.986
+3,tijera,tijera,Empate,0.834,0.436
+4,piedra,papel,Jugador 2,0.783,0.376
+5,piedra,tijera,Jugador 1,0.827,1.049
+6,papel,piedra,Jugador 1,0.839,1.135
+7,tijera,papel,Jugador 1,1.429,1.398
+8,piedra,tijera,Jugador 1,1.327,1.028
+9,piedra,piedra,Empate,1.345,1.477
+10,papel,piedra,Jugador 1,1.686,1.476
+11,piedra,papel,Jugador 2,1.364,1.176
+12,tijera,tijera,Empate,1.323,1.524
+13,piedra,papel,Jugador 2,1.4,1.752
+14,papel,piedra,Jugador 1,0.721,0.779
+15,piedra,piedra,Empate,0.451,0.64
+1,piedra,piedra,Empate,1.912,0.859
+2,piedra,tijera,Jugador 1,0.995,1.044
+3,tijera,tijera,Empate,1.191,0.662
+4,papel,papel,Empate,0.753,0.876
+5,papel,tijera,Jugador 2,1.394,2.302
+6,papel,piedra,Jugador 1,1.493,2.879
+7,piedra,piedra,Empate,1.304,4.203
+8,tijera,piedra,Jugador 2,1.349,3.614
+9,tijera,papel,Jugador 1,1.307,2.632
+10,piedra,papel,Jugador 2,1.583,3.344
+11,papel,piedra,Jugador 1,2.596,2.72
+12,papel,tijera,Jugador 2,1.383,3.437
+13,tijera,papel,Jugador 1,1.067,3.282
+14,papel,tijera,Jugador 2,1.231,3.646
+15,papel,tijera,Jugador 2,0.632,2.462
+1,papel,papel,Empate,0.907,0.611
+2,papel,piedra,Jugador 1,1.145,0.38
+3,papel,piedra,Jugador 1,1.428,0.435
+4,tijera,piedra,Jugador 2,0.531,0.307
+5,tijera,papel,Jugador 1,0.725,0.301
+6,piedra,tijera,Jugador 1,0.911,0.566
+7,tijera,tijera,Empate,1.885,0.576
+8,tijera,piedra,Jugador 2,1.362,0.6
+9,tijera,piedra,Jugador 2,0.814,0.559
+10,tijera,piedra,Jugador 2,0.906,0.797
+11,tijera,tijera,Empate,0.185,0.446
+12,papel,papel,Empate,0.899,0.349
+13,papel,papel,Empate,0.89,0.645
+14,piedra,tijera,Jugador 1,0.793,0.675
+15,piedra,papel,Jugador 2,0.675,0.148
+1,tijera,tijera,Empate,1.55,1.645
+2,piedra,tijera,Jugador 1,1.136,0.912
+3,papel,tijera,Jugador 2,2.346,0.91
+4,papel,piedra,Jugador 1,0.853,0.428
+5,piedra,papel,Jugador 2,0.821,1.822
+6,papel,tijera,Jugador 2,1.264,0.349
+7,piedra,piedra,Empate,1.264,1.735
+8,piedra,piedra,Empate,1.371,0.659
+9,tijera,tijera,Empate,0.873,0.473
+10,papel,piedra,Jugador 1,0.787,0.41
+11,papel,papel,Empate,0.828,0.488
+12,piedra,piedra,Empate,0.973,0.42
+13,tijera,tijera,Empate,0.886,0.451
+14,tijera,piedra,Jugador 2,1.029,0.604
+15,papel,piedra,Jugador 1,0.705,0.728
+1,piedra,piedra,Empate,0.869,0.567
+2,papel,tijera,Jugador 2,1.66,0.36
+3,tijera,tijera,Empate,0.778,0.442
+4,piedra,tijera,Jugador 1,1.0,1.034
+5,papel,tijera,Jugador 2,1.202,0.905
+6,piedra,papel,Jugador 2,0.893,0.793
+7,tijera,tijera,Empate,0.899,0.695
+8,piedra,piedra,Empate,1.614,0.49
+9,papel,papel,Empate,0.958,1.198
+10,papel,tijera,Jugador 2,1.331,0.301
+11,piedra,papel,Jugador 2,1.454,0.917
+12,papel,piedra,Jugador 1,1.462,1.205
+13,tijera,piedra,Jugador 2,1.45,0.996
+14,piedra,tijera,Jugador 1,0.782,0.725
+15,papel,papel,Empate,0.424,0.164
