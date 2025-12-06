@@ -55,10 +55,10 @@ COLOR_RESET = "\033[0m"
 
 
 def obtener_nota(winrate: float) -> tuple:
-    """Calcula la nota basada en el winrate (el winrate ya incluye empates como derrotas)."""
+    """Calcula la nota basada en el winrate."""
     if winrate >= 55: return 10, f"{COLOR_VERDE}🎉 BONUS: Fallos en examen no restan!{COLOR_RESET}"
     elif winrate >= 50: return 10, None
-    elif winrate >= 42: return 5, None # El objetivo base
+    elif winrate >= 42: return 5, None # El objetivo base (usando solo V+D)
     else: return 0, None
 
 
@@ -184,12 +184,12 @@ class JuegoRPS:
     def mostrar_progreso_final(self):
         """Muestra el resumen de estadísticas al final del juego."""
 
-        # EL AJUSTE CLAVE: El total de rondas para el Winrate es Victories + Losses + Empates
-        total_rondas_winrate = self.victorias_ia + self.derrotas_ia + self.empates
+        # AJUSTE CLAVE: Total de rondas consideradas para el winrate (solo V + D)
+        total_decisivas = self.victorias_ia + self.derrotas_ia
 
-        if total_rondas_winrate > 0:
-            # Winrate = Victorias / (Total de Rondas)
-            winrate = self.victorias_ia / total_rondas_winrate * 100
+        if total_decisivas > 0:
+            # Winrate = Victorias / (Victorias + Derrotas)
+            winrate = self.victorias_ia / total_decisivas * 100
         else:
             winrate = 0
 
@@ -202,8 +202,8 @@ class JuegoRPS:
         print(f"   Empates: {self.empates}")
 
         # NOTA DE CÁLCULO
-        print(f"\n   [Cálculo]: Winrate = Victorias / (Total de Rondas)")
-        print(f"   {COLOR_CYAN}WINRATE FINAL (Empates = Derrotas): {winrate:.1f}%{COLOR_RESET}")
+        print(f"\n   [Cálculo]: Winrate = Victorias / (Victorias + Derrotas)")
+        print(f"   {COLOR_CYAN}WINRATE FINAL (Empates Excluidos): {winrate:.1f}%{COLOR_RESET}")
 
         nota, bonus = obtener_nota(winrate)
         if winrate >= 42:
@@ -242,8 +242,8 @@ class JuegoRPS:
                                self.tiempo_humano, tiempo_ia, resultado)
 
         # 4. Registrar en el historial de la IA (para la siguiente predicción)
-        self.ia.registrar_ronda(self.jugada_humano, jugada_ia,
-                                self.tiempo_humano, tiempo_ia)
+        self.ia.registrar_ronda(jugada_ia, self.jugada_humano,
+                                tiempo_ia, self.tiempo_humano)
 
         time.sleep(1)
 

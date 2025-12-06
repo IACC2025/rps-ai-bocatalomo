@@ -1,0 +1,856 @@
+numero_ronda,jugada_j1,jugada_j2,ganador,tiempo_j1,tiempo_j2
+1,piedra,papel,Jugador 2,0.542,0.578
+2,papel,papel,Empate,0.563,0.409
+3,papel,piedra,Jugador 1,0.719,0.529
+4,piedra,piedra,Empate,0.666,0.711
+5,tijera,papel,Jugador 1,0.896,0.824
+6,tijera,tijera,Empate,0.644,0.529
+7,papel,papel,Empate,0.464,0.767
+8,piedra,papel,Jugador 2,0.571,0.804
+9,tijera,piedra,Jugador 2,0.706,0.485
+10,papel,tijera,Jugador 2,0.472,0.532
+11,tijera,papel,Jugador 1,0.45,0.434
+12,tijera,piedra,Jugador 2,0.577,0.514
+13,papel,papel,Empate,0.762,0.459
+14,papel,tijera,Jugador 2,0.573,0.493
+15,papel,tijera,Jugador 2,1.449,0.946
+16,papel,piedra,Jugador 1,0.495,3.365
+17,piedra,piedra,Empate,1.089,1.14
+18,piedra,piedra,Empate,1.035,0.841
+19,papel,papel,Empate,0.411,0.448
+20,papel,papel,Empate,0.636,0.837
+21,piedra,tijera,Jugador 1,0.813,0.796
+22,tijera,papel,Jugador 1,0.779,0.527
+23,papel,piedra,Jugador 1,0.924,0.838
+24,piedra,tijera,Jugador 1,1.144,0.82
+25,papel,papel,Empate,1.199,0.689
+26,tijera,piedra,Jugador 2,1.134,0.674
+27,piedra,tijera,Jugador 1,0.711,0.5
+28,papel,piedra,Jugador 1,0.764,0.372
+29,piedra,piedra,Empate,0.938,0.645
+30,tijera,piedra,Jugador 2,0.354,0.499
+31,piedra,piedra,Empate,1.912,0.859
+32,piedra,tijera,Jugador 1,0.995,1.044
+33,tijera,tijera,Empate,1.191,0.662
+34,papel,papel,Empate,0.753,0.876
+35,papel,tijera,Jugador 2,1.394,2.302
+36,papel,piedra,Jugador 1,1.493,2.879
+37,piedra,piedra,Empate,1.304,4.203
+38,tijera,piedra,Jugador 2,1.349,3.614
+39,tijera,papel,Jugador 1,1.307,2.632
+40,piedra,papel,Jugador 2,1.583,3.344
+41,papel,piedra,Jugador 1,2.596,2.72
+42,papel,tijera,Jugador 2,1.383,3.437
+43,tijera,papel,Jugador 1,1.067,3.282
+44,papel,tijera,Jugador 2,1.231,3.646
+45,papel,tijera,Jugador 2,0.632,2.462
+46,papel,papel,Empate,0.907,0.611
+47,papel,piedra,Jugador 1,1.145,0.38
+48,papel,piedra,Jugador 1,1.428,0.435
+49,tijera,piedra,Jugador 2,0.531,0.307
+50,tijera,papel,Jugador 1,0.725,0.301
+51,piedra,tijera,Jugador 1,0.911,0.566
+52,tijera,tijera,Empate,1.885,0.576
+53,tijera,piedra,Jugador 2,1.362,0.6
+54,tijera,piedra,Jugador 2,0.814,0.559
+55,tijera,piedra,Jugador 2,0.906,0.797
+56,tijera,tijera,Empate,0.185,0.446
+57,papel,papel,Empate,0.899,0.349
+58,papel,papel,Empate,0.89,0.645
+59,piedra,tijera,Jugador 1,0.793,0.675
+60,piedra,papel,Jugador 2,0.675,0.148
+61,tijera,tijera,Empate,1.55,1.645
+62,piedra,tijera,Jugador 1,1.136,0.912
+63,papel,tijera,Jugador 2,2.346,0.91
+64,papel,piedra,Jugador 1,0.853,0.428
+65,piedra,papel,Jugador 2,0.821,1.822
+66,papel,tijera,Jugador 2,1.264,0.349
+67,piedra,piedra,Empate,1.264,1.735
+68,piedra,piedra,Empate,1.371,0.659
+69,tijera,tijera,Empate,0.873,0.473
+70,papel,piedra,Jugador 1,0.787,0.41
+71,papel,papel,Empate,0.828,0.488
+72,piedra,piedra,Empate,0.973,0.42
+73,tijera,tijera,Empate,0.886,0.451
+74,tijera,piedra,Jugador 2,1.029,0.604
+75,papel,piedra,Jugador 1,0.705,0.728
+76,piedra,piedra,Empate,0.869,0.567
+77,papel,tijera,Jugador 2,1.66,0.36
+78,tijera,tijera,Empate,0.778,0.442
+79,piedra,tijera,Jugador 1,1.0,1.034
+80,papel,tijera,Jugador 2,1.202,0.905
+81,piedra,papel,Jugador 2,0.893,0.793
+82,tijera,tijera,Empate,0.899,0.695
+83,piedra,piedra,Empate,1.614,0.49
+84,papel,papel,Empate,0.958,1.198
+85,papel,tijera,Jugador 2,1.331,0.301
+86,piedra,papel,Jugador 2,1.454,0.917
+87,papel,piedra,Jugador 1,1.462,1.205
+88,tijera,piedra,Jugador 2,1.45,0.996
+89,piedra,tijera,Jugador 1,0.782,0.725
+90,papel,papel,Empate,0.424,0.164
+91,tijera,papel,Jugador 1,0.75,0.741
+92,papel,papel,Empate,0.136,0.288
+93,piedra,piedra,Empate,0.199,0.64
+94,papel,tijera,Jugador 2,0.409,0.618
+95,tijera,tijera,Empate,0.146,0.651
+96,papel,papel,Empate,0.652,0.473
+97,piedra,papel,Jugador 2,1.927,0.493
+98,papel,piedra,Jugador 1,1.188,1.059
+99,piedra,tijera,Jugador 1,0.562,1.028
+100,papel,papel,Empate,1.504,1.153
+101,tijera,papel,Jugador 1,1.61,1.158
+102,papel,tijera,Jugador 2,1.301,1.22
+103,piedra,piedra,Empate,1.174,0.622
+104,piedra,papel,Jugador 2,2.737,0.813
+105,tijera,tijera,Empate,0.463,0.747
+106,papel,papel,Empate,0.14,0.715
+107,tijera,tijera,Empate,1.359,0.997
+108,tijera,papel,Jugador 1,0.594,0.606
+109,papel,papel,Empate,0.541,0.722
+110,piedra,piedra,Empate,0.501,0.593
+111,tijera,tijera,Empate,0.725,0.862
+112,tijera,papel,Jugador 1,0.881,0.759
+113,piedra,papel,Jugador 2,0.557,0.722
+114,papel,piedra,Jugador 1,0.589,0.477
+115,tijera,piedra,Jugador 2,0.476,0.59
+116,piedra,tijera,Jugador 1,0.53,0.602
+117,papel,tijera,Jugador 2,0.934,0.661
+118,piedra,papel,Jugador 2,0.87,0.857
+119,tijera,papel,Jugador 1,0.348,0.599
+120,piedra,piedra,Empate,0.56,0.407
+121,papel,piedra,Jugador 1,0.578,0.542
+122,papel,papel,Empate,0.409,0.563
+123,piedra,papel,Jugador 2,0.529,0.719
+124,piedra,piedra,Empate,0.711,0.666
+125,papel,tijera,Jugador 2,0.824,0.896
+126,tijera,tijera,Empate,0.529,0.644
+127,papel,papel,Empate,0.767,0.464
+128,papel,piedra,Jugador 1,0.804,0.571
+129,piedra,tijera,Jugador 1,0.485,0.706
+130,tijera,papel,Jugador 1,0.532,0.472
+131,papel,tijera,Jugador 2,0.434,0.45
+132,piedra,tijera,Jugador 1,0.514,0.577
+133,papel,papel,Empate,0.459,0.762
+134,tijera,papel,Jugador 1,0.493,0.573
+135,tijera,papel,Jugador 1,0.946,1.449
+136,papel,papel,Empate,0.529,0.729
+137,tijera,papel,Jugador 1,0.489,0.609
+138,piedra,piedra,Empate,0.499,0.856
+139,papel,piedra,Jugador 1,0.275,0.768
+140,papel,tijera,Jugador 2,0.527,1.151
+141,tijera,piedra,Jugador 2,0.243,0.739
+142,piedra,piedra,Empate,0.069,0.403
+143,piedra,piedra,Empate,0.13,0.566
+144,papel,tijera,Jugador 2,2.744,1.815
+145,tijera,piedra,Jugador 2,1.052,1.203
+146,piedra,papel,Jugador 2,0.674,0.71
+147,piedra,piedra,Empate,0.836,0.398
+148,papel,tijera,Jugador 2,0.9,0.975
+149,piedra,papel,Jugador 2,0.749,0.971
+150,tijera,piedra,Jugador 2,0.473,0.188
+151,piedra,piedra,Empate,0.859,1.912
+152,tijera,piedra,Jugador 2,1.044,0.995
+153,tijera,tijera,Empate,0.662,1.191
+154,papel,papel,Empate,0.876,0.753
+155,tijera,papel,Jugador 1,2.302,1.394
+156,piedra,papel,Jugador 2,2.879,1.493
+157,piedra,piedra,Empate,4.203,1.304
+158,piedra,tijera,Jugador 1,3.614,1.349
+159,papel,tijera,Jugador 2,2.632,1.307
+160,papel,piedra,Jugador 1,3.344,1.583
+161,piedra,papel,Jugador 2,2.72,2.596
+162,tijera,papel,Jugador 1,3.437,1.383
+163,papel,tijera,Jugador 2,3.282,1.067
+164,tijera,papel,Jugador 1,3.646,1.231
+165,tijera,papel,Jugador 1,2.462,0.632
+166,papel,papel,Empate,0.611,0.907
+167,piedra,papel,Jugador 2,0.38,1.145
+168,piedra,papel,Jugador 2,0.435,1.428
+169,piedra,tijera,Jugador 1,0.307,0.531
+170,papel,tijera,Jugador 2,0.301,0.725
+171,tijera,piedra,Jugador 2,0.566,0.911
+172,tijera,tijera,Empate,0.576,1.885
+173,piedra,tijera,Jugador 1,0.6,1.362
+174,piedra,tijera,Jugador 1,0.559,0.814
+175,piedra,tijera,Jugador 1,0.797,0.906
+176,tijera,tijera,Empate,0.446,0.185
+177,papel,papel,Empate,0.349,0.899
+178,papel,papel,Empate,0.645,0.89
+179,tijera,piedra,Jugador 2,0.675,0.793
+180,papel,piedra,Jugador 1,0.148,0.675
+181,tijera,papel,Jugador 1,1.0,1.0
+182,piedra,papel,Jugador 2,1.0,1.0
+183,tijera,piedra,Jugador 2,1.0,1.0
+184,tijera,tijera,Empate,1.0,1.0
+185,papel,papel,Empate,1.0,1.0
+186,papel,papel,Empate,1.0,1.0
+187,piedra,papel,Jugador 2,1.0,1.0
+188,tijera,piedra,Jugador 2,1.0,1.0
+189,tijera,tijera,Empate,1.0,1.0
+190,papel,tijera,Jugador 2,1.0,1.0
+191,piedra,papel,Jugador 2,1.0,1.0
+192,tijera,papel,Jugador 1,1.0,1.0
+193,papel,tijera,Jugador 2,1.0,1.0
+194,piedra,papel,Jugador 2,1.0,1.0
+195,tijera,tijera,Empate,1.0,1.0
+196,tijera,papel,Jugador 1,1.0,1.0
+197,tijera,piedra,Jugador 2,1.0,1.0
+198,tijera,tijera,Empate,1.0,1.0
+199,piedra,piedra,Empate,1.0,1.0
+200,tijera,papel,Jugador 1,1.0,1.0
+201,papel,piedra,Jugador 1,1.0,1.0
+202,piedra,piedra,Empate,1.0,1.0
+203,papel,piedra,Jugador 1,1.0,1.0
+204,tijera,papel,Jugador 1,1.0,1.0
+205,piedra,piedra,Empate,1.0,1.0
+206,piedra,piedra,Empate,1.0,1.0
+207,piedra,papel,Jugador 2,1.0,1.0
+208,piedra,piedra,Empate,1.0,1.0
+209,piedra,piedra,Empate,1.0,1.0
+210,piedra,tijera,Jugador 1,1.0,1.0
+211,piedra,tijera,Jugador 1,1.0,1.0
+212,piedra,piedra,Empate,1.0,1.0
+213,tijera,piedra,Jugador 2,1.0,1.0
+214,tijera,piedra,Jugador 2,1.0,1.0
+215,papel,piedra,Jugador 1,1.0,1.0
+216,piedra,papel,Jugador 2,1.0,1.0
+217,piedra,piedra,Empate,1.0,1.0
+218,piedra,tijera,Jugador 1,1.0,1.0
+219,tijera,papel,Jugador 1,1.0,1.0
+220,tijera,tijera,Empate,1.0,1.0
+221,papel,tijera,Jugador 2,1.0,1.0
+222,piedra,piedra,Empate,1.0,1.0
+223,piedra,piedra,Empate,1.0,1.0
+224,piedra,tijera,Jugador 1,1.0,1.0
+225,tijera,papel,Jugador 1,1.0,1.0
+226,tijera,piedra,Jugador 2,1.0,1.0
+227,papel,papel,Empate,1.0,1.0
+228,piedra,papel,Jugador 2,1.0,1.0
+229,piedra,piedra,Empate,1.0,1.0
+230,piedra,piedra,Empate,1.0,1.0
+231,tijera,piedra,Jugador 2,1.0,1.0
+232,tijera,tijera,Empate,1.0,1.0
+233,papel,tijera,Jugador 2,1.0,1.0
+234,piedra,tijera,Jugador 1,1.0,1.0
+235,piedra,papel,Jugador 2,1.0,1.0
+236,piedra,papel,Jugador 2,1.0,1.0
+237,tijera,piedra,Jugador 2,1.0,1.0
+238,tijera,piedra,Jugador 2,1.0,1.0
+239,papel,tijera,Jugador 2,1.0,1.0
+240,piedra,piedra,Empate,1.0,1.0
+241,papel,piedra,Jugador 1,1.0,1.0
+242,papel,piedra,Jugador 1,1.0,1.0
+243,papel,papel,Empate,1.0,1.0
+244,piedra,papel,Jugador 2,1.0,1.0
+245,papel,piedra,Jugador 1,1.0,1.0
+246,tijera,tijera,Empate,1.0,1.0
+247,tijera,tijera,Empate,1.0,1.0
+248,tijera,papel,Jugador 1,1.0,1.0
+249,piedra,piedra,Empate,1.0,1.0
+250,piedra,piedra,Empate,1.0,1.0
+251,tijera,piedra,Jugador 2,1.0,1.0
+252,papel,tijera,Jugador 2,1.0,1.0
+253,tijera,tijera,Empate,1.0,1.0
+254,piedra,papel,Jugador 2,1.0,1.0
+255,piedra,piedra,Empate,1.0,1.0
+256,piedra,piedra,Empate,1.0,1.0
+257,piedra,piedra,Empate,1.0,1.0
+258,piedra,piedra,Empate,1.0,1.0
+259,piedra,papel,Jugador 2,1.0,1.0
+260,piedra,tijera,Jugador 1,1.0,1.0
+261,piedra,papel,Jugador 2,1.0,1.0
+262,piedra,piedra,Empate,1.0,1.0
+263,tijera,piedra,Jugador 2,1.0,1.0
+264,piedra,tijera,Jugador 1,1.0,1.0
+265,tijera,papel,Jugador 1,1.0,1.0
+266,tijera,papel,Jugador 1,1.0,1.0
+267,tijera,papel,Jugador 1,1.0,1.0
+268,tijera,tijera,Empate,1.0,1.0
+269,tijera,papel,Jugador 1,1.0,1.0
+270,tijera,piedra,Jugador 2,1.0,1.0
+271,tijera,piedra,Jugador 2,1.0,1.0
+272,piedra,papel,Jugador 2,1.0,1.0
+273,tijera,piedra,Jugador 2,1.0,1.0
+274,tijera,papel,Jugador 1,1.0,1.0
+275,piedra,piedra,Empate,1.0,1.0
+276,tijera,papel,Jugador 1,1.0,1.0
+277,tijera,piedra,Jugador 2,1.0,1.0
+278,tijera,piedra,Jugador 2,1.0,1.0
+279,piedra,piedra,Empate,1.0,1.0
+280,tijera,piedra,Jugador 2,1.0,1.0
+281,piedra,papel,Jugador 2,1.0,1.0
+282,piedra,piedra,Empate,1.0,1.0
+283,papel,piedra,Jugador 1,1.0,1.0
+284,piedra,piedra,Empate,1.0,1.0
+285,tijera,tijera,Empate,1.0,1.0
+286,tijera,tijera,Empate,1.0,1.0
+287,tijera,tijera,Empate,1.0,1.0
+288,tijera,papel,Jugador 1,1.0,1.0
+289,tijera,tijera,Empate,1.0,1.0
+290,tijera,piedra,Jugador 2,1.0,1.0
+291,piedra,tijera,Jugador 1,1.0,1.0
+292,papel,piedra,Jugador 1,1.0,1.0
+293,papel,piedra,Jugador 1,1.0,1.0
+294,piedra,tijera,Jugador 1,1.0,1.0
+295,tijera,papel,Jugador 1,1.0,1.0
+296,papel,piedra,Jugador 1,1.0,1.0
+297,tijera,tijera,Empate,1.0,1.0
+298,papel,tijera,Jugador 2,1.0,1.0
+299,papel,piedra,Jugador 1,1.0,1.0
+300,piedra,piedra,Empate,1.0,1.0
+301,papel,papel,Empate,1.0,1.0
+302,tijera,papel,Jugador 1,1.0,1.0
+303,papel,papel,Empate,1.0,1.0
+304,papel,papel,Empate,1.0,1.0
+305,tijera,papel,Jugador 1,1.0,1.0
+306,piedra,papel,Jugador 2,1.0,1.0
+307,tijera,papel,Jugador 1,1.0,1.0
+308,papel,piedra,Jugador 1,1.0,1.0
+309,papel,tijera,Jugador 2,1.0,1.0
+310,piedra,tijera,Jugador 1,1.0,1.0
+311,tijera,tijera,Empate,1.0,1.0
+312,papel,piedra,Jugador 1,1.0,1.0
+313,piedra,papel,Jugador 2,1.0,1.0
+314,tijera,tijera,Empate,1.0,1.0
+315,papel,tijera,Jugador 2,1.0,1.0
+316,papel,piedra,Jugador 1,1.0,1.0
+317,papel,papel,Empate,1.0,1.0
+318,piedra,piedra,Empate,1.0,1.0
+319,piedra,piedra,Empate,1.0,1.0
+320,papel,tijera,Jugador 2,1.0,1.0
+321,tijera,tijera,Empate,1.0,1.0
+322,tijera,piedra,Jugador 2,1.0,1.0
+323,tijera,papel,Jugador 1,1.0,1.0
+324,tijera,tijera,Empate,1.0,1.0
+325,tijera,tijera,Empate,1.0,1.0
+326,tijera,tijera,Empate,1.0,1.0
+327,papel,piedra,Jugador 1,1.0,1.0
+328,tijera,piedra,Jugador 2,1.0,1.0
+329,tijera,piedra,Jugador 2,1.0,1.0
+330,tijera,piedra,Jugador 2,1.0,1.0
+331,tijera,tijera,Empate,1.0,1.0
+332,tijera,papel,Jugador 1,1.0,1.0
+333,tijera,piedra,Jugador 2,1.0,1.0
+334,piedra,piedra,Empate,1.0,1.0
+335,tijera,piedra,Jugador 2,1.0,1.0
+336,papel,piedra,Jugador 1,1.0,1.0
+337,tijera,piedra,Jugador 2,1.0,1.0
+338,tijera,piedra,Jugador 2,1.0,1.0
+339,tijera,piedra,Jugador 2,1.0,1.0
+340,tijera,piedra,Jugador 2,1.0,1.0
+341,tijera,piedra,Jugador 2,1.0,1.0
+342,tijera,piedra,Jugador 2,1.0,1.0
+343,papel,piedra,Jugador 1,1.0,1.0
+344,piedra,piedra,Empate,1.0,1.0
+345,piedra,piedra,Empate,1.0,1.0
+346,papel,piedra,Jugador 1,1.0,1.0
+347,papel,tijera,Jugador 2,1.0,1.0
+348,piedra,piedra,Empate,1.0,1.0
+349,piedra,piedra,Empate,1.0,1.0
+350,piedra,piedra,Empate,1.0,1.0
+351,piedra,papel,Jugador 2,1.0,1.0
+352,tijera,papel,Jugador 1,1.0,1.0
+353,piedra,piedra,Empate,1.0,1.0
+354,papel,papel,Empate,1.0,1.0
+355,tijera,papel,Jugador 1,1.0,1.0
+356,papel,piedra,Jugador 1,1.0,1.0
+357,papel,tijera,Jugador 2,1.0,1.0
+358,tijera,papel,Jugador 1,1.0,1.0
+359,papel,tijera,Jugador 2,1.0,1.0
+360,piedra,piedra,Empate,1.0,1.0
+361,piedra,piedra,Empate,1.0,1.0
+362,papel,piedra,Jugador 1,1.0,1.0
+363,tijera,papel,Jugador 1,1.0,1.0
+364,papel,papel,Empate,1.0,1.0
+365,papel,tijera,Jugador 2,1.0,1.0
+366,tijera,papel,Jugador 1,1.0,1.0
+367,papel,tijera,Jugador 2,1.0,1.0
+368,tijera,tijera,Empate,1.0,1.0
+369,piedra,piedra,Empate,1.0,1.0
+370,tijera,piedra,Jugador 2,1.0,1.0
+371,papel,piedra,Jugador 1,1.0,1.0
+372,papel,tijera,Jugador 2,1.0,1.0
+373,piedra,tijera,Jugador 1,1.0,1.0
+374,papel,piedra,Jugador 1,1.0,1.0
+375,papel,tijera,Jugador 2,1.0,1.0
+376,tijera,piedra,Jugador 2,1.0,1.0
+377,piedra,piedra,Empate,1.0,1.0
+378,papel,tijera,Jugador 2,1.0,1.0
+379,papel,papel,Empate,1.0,1.0
+380,tijera,papel,Jugador 1,1.0,1.0
+381,tijera,tijera,Empate,1.0,1.0
+382,piedra,papel,Jugador 2,1.0,1.0
+383,papel,tijera,Jugador 2,1.0,1.0
+384,tijera,piedra,Jugador 2,1.0,1.0
+385,piedra,piedra,Empate,1.0,1.0
+386,piedra,piedra,Empate,1.0,1.0
+387,papel,piedra,Jugador 1,1.0,1.0
+388,tijera,piedra,Jugador 2,1.0,1.0
+389,piedra,tijera,Jugador 1,1.0,1.0
+390,papel,tijera,Jugador 2,1.0,1.0
+391,tijera,piedra,Jugador 2,1.0,1.0
+392,piedra,papel,Jugador 2,1.0,1.0
+393,tijera,piedra,Jugador 2,1.0,1.0
+394,papel,tijera,Jugador 2,1.0,1.0
+395,piedra,papel,Jugador 2,1.0,1.0
+396,tijera,papel,Jugador 1,1.0,1.0
+397,piedra,papel,Jugador 2,1.0,1.0
+398,tijera,piedra,Jugador 2,1.0,1.0
+399,piedra,tijera,Jugador 1,1.0,1.0
+400,papel,papel,Empate,1.0,1.0
+401,tijera,papel,Jugador 1,1.0,1.0
+402,piedra,papel,Jugador 2,1.0,1.0
+403,tijera,piedra,Jugador 2,1.0,1.0
+404,tijera,papel,Jugador 1,1.0,1.0
+405,piedra,piedra,Empate,1.0,1.0
+406,papel,tijera,Jugador 2,1.0,1.0
+407,papel,papel,Empate,1.0,1.0
+408,papel,tijera,Jugador 2,1.0,1.0
+409,piedra,tijera,Jugador 1,1.0,1.0
+410,piedra,tijera,Jugador 1,1.0,1.0
+411,tijera,papel,Jugador 1,1.0,1.0
+412,papel,piedra,Jugador 1,1.0,1.0
+413,piedra,piedra,Empate,1.0,1.0
+414,tijera,tijera,Empate,1.0,1.0
+415,tijera,tijera,Empate,1.0,1.0
+416,piedra,papel,Jugador 2,1.0,1.0
+417,papel,tijera,Jugador 2,1.0,1.0
+418,papel,piedra,Jugador 1,1.0,1.0
+419,tijera,tijera,Empate,1.0,1.0
+420,piedra,piedra,Empate,1.0,1.0
+421,papel,piedra,Jugador 1,1.0,1.0
+422,tijera,papel,Jugador 1,1.0,1.0
+423,piedra,papel,Jugador 2,1.0,1.0
+424,piedra,tijera,Jugador 1,1.0,1.0
+425,papel,papel,Empate,1.0,1.0
+426,tijera,papel,Jugador 1,1.0,1.0
+427,papel,piedra,Jugador 1,1.0,1.0
+428,piedra,papel,Jugador 2,1.0,1.0
+429,papel,tijera,Jugador 2,1.0,1.0
+430,tijera,tijera,Empate,1.0,1.0
+431,papel,piedra,Jugador 1,1.0,1.0
+432,tijera,papel,Jugador 1,1.0,1.0
+433,piedra,papel,Jugador 2,1.0,1.0
+434,tijera,piedra,Jugador 2,1.0,1.0
+435,piedra,papel,Jugador 2,1.0,1.0
+436,papel,papel,Empate,1.0,1.0
+437,piedra,piedra,Empate,1.0,1.0
+438,tijera,tijera,Empate,1.0,1.0
+439,papel,tijera,Jugador 2,1.0,1.0
+440,tijera,tijera,Empate,1.0,1.0
+441,papel,papel,Empate,1.0,1.0
+442,tijera,piedra,Jugador 2,1.0,1.0
+443,piedra,piedra,Empate,1.0,1.0
+444,tijera,tijera,Empate,1.0,1.0
+445,papel,tijera,Jugador 2,1.0,1.0
+446,tijera,papel,Jugador 1,1.0,1.0
+447,piedra,papel,Jugador 2,1.0,1.0
+448,papel,tijera,Jugador 2,1.0,1.0
+449,tijera,piedra,Jugador 2,1.0,1.0
+450,papel,piedra,Jugador 1,1.0,1.0
+451,tijera,tijera,Empate,1.0,1.0
+452,papel,papel,Empate,1.0,1.0
+453,piedra,tijera,Jugador 1,1.0,1.0
+454,papel,piedra,Jugador 1,1.0,1.0
+455,tijera,piedra,Jugador 2,1.0,1.0
+456,papel,piedra,Jugador 1,1.0,1.0
+457,piedra,piedra,Empate,1.0,1.0
+458,papel,tijera,Jugador 2,1.0,1.0
+459,tijera,piedra,Jugador 2,1.0,1.0
+460,piedra,papel,Jugador 2,1.0,1.0
+461,tijera,papel,Jugador 1,1.0,1.0
+462,papel,papel,Empate,1.0,1.0
+463,piedra,tijera,Jugador 1,1.0,1.0
+464,tijera,piedra,Jugador 2,1.0,1.0
+465,piedra,tijera,Jugador 1,1.0,1.0
+466,tijera,papel,Jugador 1,1.0,1.0
+467,papel,piedra,Jugador 1,1.0,1.0
+468,piedra,piedra,Empate,1.0,1.0
+469,tijera,piedra,Jugador 2,1.0,1.0
+470,piedra,piedra,Empate,1.0,1.0
+471,papel,papel,Empate,1.0,1.0
+472,piedra,papel,Jugador 2,1.0,1.0
+473,papel,tijera,Jugador 2,1.0,1.0
+474,piedra,papel,Jugador 2,1.0,1.0
+475,tijera,piedra,Jugador 2,1.0,1.0
+476,papel,piedra,Jugador 1,1.0,1.0
+477,tijera,piedra,Jugador 2,1.0,1.0
+478,piedra,papel,Jugador 2,1.0,1.0
+479,papel,papel,Empate,1.0,1.0
+480,piedra,piedra,Empate,1.0,1.0
+481,tijera,papel,Jugador 1,1.0,1.0
+482,piedra,tijera,Jugador 1,1.0,1.0
+483,papel,tijera,Jugador 2,1.0,1.0
+484,piedra,piedra,Empate,1.0,1.0
+485,tijera,papel,Jugador 1,1.0,1.0
+486,piedra,papel,Jugador 2,1.0,1.0
+487,papel,papel,Empate,1.0,1.0
+488,piedra,tijera,Jugador 1,1.0,1.0
+489,tijera,tijera,Empate,1.0,1.0
+490,papel,tijera,Jugador 2,1.0,1.0
+491,piedra,piedra,Empate,1.0,1.0
+492,papel,piedra,Jugador 1,1.0,1.0
+493,piedra,piedra,Empate,1.0,1.0
+494,tijera,papel,Jugador 1,1.0,1.0
+495,papel,piedra,Jugador 1,1.0,1.0
+496,tijera,tijera,Empate,1.0,1.0
+497,piedra,tijera,Jugador 1,1.0,1.0
+498,papel,piedra,Jugador 1,1.0,1.0
+499,tijera,papel,Jugador 1,1.0,1.0
+500,piedra,piedra,Empate,1.0,1.0
+501,papel,piedra,Jugador 1,1.0,1.0
+502,tijera,tijera,Empate,1.0,1.0
+503,piedra,tijera,Jugador 1,1.0,1.0
+504,papel,papel,Empate,1.0,1.0
+505,piedra,papel,Jugador 2,1.0,1.0
+506,tijera,papel,Jugador 1,1.0,1.0
+507,papel,papel,Empate,1.0,1.0
+508,piedra,piedra,Empate,1.0,1.0
+509,papel,papel,Empate,1.0,1.0
+510,tijera,tijera,Empate,1.0,1.0
+511,tijera,piedra,Jugador 2,1.0,1.0
+512,papel,papel,Empate,1.0,1.0
+513,piedra,papel,Jugador 2,1.0,1.0
+514,tijera,papel,Jugador 1,1.0,1.0
+515,papel,papel,Empate,1.0,1.0
+516,piedra,tijera,Jugador 1,1.0,1.0
+517,piedra,tijera,Jugador 1,1.0,1.0
+518,tijera,tijera,Empate,1.0,1.0
+519,papel,piedra,Jugador 1,1.0,1.0
+520,piedra,piedra,Empate,1.0,1.0
+521,piedra,papel,Jugador 2,1.0,1.0
+522,papel,tijera,Jugador 2,1.0,1.0
+523,tijera,tijera,Empate,1.0,1.0
+524,papel,papel,Empate,1.0,1.0
+525,piedra,tijera,Jugador 1,1.0,1.0
+526,piedra,papel,Jugador 2,1.0,1.0
+527,papel,papel,Empate,1.0,1.0
+528,tijera,papel,Jugador 1,1.0,1.0
+529,piedra,piedra,Empate,1.0,1.0
+530,tijera,papel,Jugador 1,1.0,1.0
+531,piedra,papel,Jugador 2,1.0,1.0
+532,tijera,papel,Jugador 1,1.0,1.0
+533,papel,papel,Empate,1.0,1.0
+534,papel,papel,Empate,1.0,1.0
+535,piedra,papel,Jugador 2,1.0,1.0
+536,tijera,papel,Jugador 1,1.0,1.0
+537,piedra,papel,Jugador 2,1.0,1.0
+538,tijera,papel,Jugador 1,1.0,1.0
+539,piedra,papel,Jugador 2,1.0,1.0
+540,papel,papel,Empate,1.0,1.0
+541,tijera,papel,Jugador 1,1.0,1.0
+542,piedra,papel,Jugador 2,1.0,1.0
+543,papel,papel,Empate,1.0,1.0
+544,tijera,papel,Jugador 1,1.0,1.0
+545,tijera,papel,Jugador 1,1.0,1.0
+546,piedra,piedra,Empate,1.0,1.0
+547,papel,papel,Empate,1.0,1.0
+548,piedra,papel,Jugador 2,1.0,1.0
+549,tijera,papel,Jugador 1,1.0,1.0
+550,papel,papel,Empate,1.0,1.0
+551,papel,papel,Empate,1.0,1.0
+552,tijera,papel,Jugador 1,1.0,1.0
+553,piedra,papel,Jugador 2,1.0,1.0
+554,tijera,papel,Jugador 1,1.0,1.0
+555,piedra,papel,Jugador 2,1.0,1.0
+556,papel,papel,Empate,1.0,1.0
+557,papel,papel,Empate,1.0,1.0
+558,piedra,papel,Jugador 2,1.0,1.0
+559,tijera,papel,Jugador 1,1.0,1.0
+560,papel,tijera,Jugador 2,1.0,1.0
+561,papel,piedra,Jugador 1,1.0,1.0
+562,piedra,tijera,Jugador 1,1.0,1.0
+563,tijera,piedra,Jugador 2,1.0,1.0
+564,tijera,tijera,Empate,1.0,1.0
+565,papel,piedra,Jugador 1,1.0,1.0
+566,piedra,papel,Jugador 2,1.0,1.0
+567,piedra,tijera,Jugador 1,1.0,1.0
+568,tijera,papel,Jugador 1,1.0,1.0
+569,papel,papel,Empate,1.0,1.0
+570,papel,piedra,Jugador 1,1.0,1.0
+571,piedra,tijera,Jugador 1,1.0,1.0
+572,tijera,tijera,Empate,1.0,1.0
+573,piedra,papel,Jugador 2,1.0,1.0
+574,tijera,tijera,Empate,1.0,1.0
+575,tijera,papel,Jugador 1,1.0,1.0
+576,tijera,piedra,Jugador 2,1.0,1.0
+577,papel,piedra,Jugador 1,1.0,1.0
+578,tijera,piedra,Jugador 2,1.0,1.0
+579,papel,papel,Empate,1.0,1.0
+580,tijera,tijera,Empate,1.0,1.0
+581,piedra,tijera,Jugador 1,1.0,1.0
+582,papel,tijera,Jugador 2,1.0,1.0
+583,tijera,piedra,Jugador 2,1.0,1.0
+584,papel,papel,Empate,1.0,1.0
+585,papel,piedra,Jugador 1,1.0,1.0
+586,tijera,tijera,Empate,1.0,1.0
+587,tijera,papel,Jugador 1,1.0,1.0
+588,papel,papel,Empate,1.0,1.0
+589,papel,papel,Empate,1.0,1.0
+590,papel,tijera,Jugador 2,1.0,1.0
+591,piedra,tijera,Jugador 1,1.0,1.0
+592,tijera,tijera,Empate,1.0,1.0
+593,piedra,piedra,Empate,1.0,1.0
+594,tijera,tijera,Empate,1.0,1.0
+595,papel,papel,Empate,1.0,1.0
+596,piedra,tijera,Jugador 1,1.0,1.0
+597,tijera,piedra,Jugador 2,1.0,1.0
+598,piedra,piedra,Empate,1.0,1.0
+599,papel,tijera,Jugador 2,1.0,1.0
+600,tijera,tijera,Empate,1.0,1.0
+601,piedra,papel,Jugador 2,1.0,1.0
+602,tijera,papel,Jugador 1,1.0,1.0
+603,tijera,papel,Jugador 1,1.0,1.0
+604,tijera,tijera,Empate,1.0,1.0
+605,papel,tijera,Jugador 2,1.0,1.0
+606,tijera,papel,Jugador 1,1.0,1.0
+607,piedra,papel,Jugador 2,1.0,1.0
+608,tijera,tijera,Empate,1.0,1.0
+609,papel,piedra,Jugador 1,1.0,1.0
+610,piedra,piedra,Empate,1.0,1.0
+611,tijera,piedra,Jugador 2,1.0,1.0
+612,tijera,piedra,Jugador 2,1.0,1.0
+613,piedra,tijera,Jugador 1,1.0,1.0
+614,papel,tijera,Jugador 2,1.0,1.0
+615,piedra,tijera,Jugador 1,1.0,1.0
+616,tijera,tijera,Empate,1.0,1.0
+617,tijera,tijera,Empate,1.0,1.0
+618,papel,piedra,Jugador 1,1.0,1.0
+619,piedra,piedra,Empate,1.0,1.0
+620,tijera,tijera,Empate,1.0,1.0
+621,tijera,tijera,Empate,1.0,1.0
+622,papel,tijera,Jugador 2,1.0,1.0
+623,piedra,piedra,Empate,1.0,1.0
+624,piedra,papel,Jugador 2,1.0,1.0
+625,papel,tijera,Jugador 2,1.0,1.0
+626,piedra,papel,Jugador 2,1.0,1.0
+627,tijera,piedra,Jugador 2,1.0,1.0
+628,papel,piedra,Jugador 1,1.0,1.0
+629,papel,papel,Empate,1.0,1.0
+630,piedra,piedra,Empate,1.0,1.0
+631,tijera,piedra,Jugador 2,1.0,1.0
+632,papel,tijera,Jugador 2,1.0,1.0
+633,piedra,tijera,Jugador 1,1.0,1.0
+634,tijera,tijera,Empate,1.0,1.0
+635,piedra,papel,Jugador 2,1.0,1.0
+636,tijera,papel,Jugador 1,1.0,1.0
+637,piedra,papel,Jugador 2,1.0,1.0
+638,papel,tijera,Jugador 2,1.0,1.0
+639,piedra,papel,Jugador 2,1.0,1.0
+640,piedra,tijera,Jugador 1,1.0,1.0
+641,tijera,papel,Jugador 1,1.0,1.0
+642,papel,piedra,Jugador 1,1.0,1.0
+643,piedra,piedra,Empate,1.0,1.0
+644,tijera,tijera,Empate,1.0,1.0
+645,papel,papel,Empate,1.0,1.0
+646,piedra,tijera,Jugador 1,1.0,1.0
+647,papel,tijera,Jugador 2,1.0,1.0
+648,piedra,tijera,Jugador 1,1.0,1.0
+649,papel,tijera,Jugador 2,1.0,1.0
+650,tijera,papel,Jugador 1,1.0,1.0
+651,tijera,papel,Jugador 1,1.0,1.0
+652,piedra,papel,Jugador 2,1.0,1.0
+653,papel,papel,Empate,1.0,1.0
+654,piedra,tijera,Jugador 1,1.0,1.0
+655,tijera,papel,Jugador 1,1.0,1.0
+656,piedra,piedra,Empate,1.0,1.0
+657,piedra,papel,Jugador 2,1.0,1.0
+658,tijera,tijera,Empate,1.0,1.0
+659,piedra,papel,Jugador 2,1.0,1.0
+660,tijera,tijera,Empate,1.0,1.0
+661,papel,piedra,Jugador 1,1.0,1.0
+662,piedra,papel,Jugador 2,1.0,1.0
+663,tijera,papel,Jugador 1,1.0,1.0
+664,papel,tijera,Jugador 2,1.0,1.0
+665,piedra,tijera,Jugador 1,1.0,1.0
+666,tijera,tijera,Empate,1.0,1.0
+667,piedra,piedra,Empate,1.0,1.0
+668,papel,tijera,Jugador 2,1.0,1.0
+669,piedra,papel,Jugador 2,1.0,1.0
+670,piedra,piedra,Empate,1.0,1.0
+671,piedra,papel,Jugador 2,1.0,1.0
+672,papel,tijera,Jugador 2,1.0,1.0
+673,piedra,piedra,Empate,1.0,1.0
+674,piedra,piedra,Empate,1.0,1.0
+675,papel,piedra,Jugador 1,1.0,1.0
+676,piedra,piedra,Empate,1.0,1.0
+677,piedra,piedra,Empate,1.0,1.0
+678,tijera,piedra,Jugador 2,1.0,1.0
+679,tijera,piedra,Jugador 2,1.0,1.0
+680,piedra,piedra,Empate,1.0,1.0
+681,piedra,tijera,Jugador 1,1.0,1.0
+682,piedra,tijera,Jugador 1,1.0,1.0
+683,piedra,papel,Jugador 2,1.0,1.0
+684,papel,piedra,Jugador 1,1.0,1.0
+685,piedra,piedra,Empate,1.0,1.0
+686,tijera,piedra,Jugador 2,1.0,1.0
+687,papel,tijera,Jugador 2,1.0,1.0
+688,tijera,tijera,Empate,1.0,1.0
+689,tijera,papel,Jugador 1,1.0,1.0
+690,piedra,piedra,Empate,1.0,1.0
+691,piedra,piedra,Empate,1.0,1.0
+692,tijera,piedra,Jugador 2,1.0,1.0
+693,papel,tijera,Jugador 2,1.0,1.0
+694,piedra,tijera,Jugador 1,1.0,1.0
+695,papel,papel,Empate,1.0,1.0
+696,papel,piedra,Jugador 1,1.0,1.0
+697,piedra,piedra,Empate,1.0,1.0
+698,piedra,piedra,Empate,1.0,1.0
+699,piedra,tijera,Jugador 1,1.0,1.0
+700,tijera,tijera,Empate,1.0,1.0
+701,tijera,papel,Jugador 1,1.0,1.0
+702,tijera,piedra,Jugador 2,1.0,1.0
+703,papel,piedra,Jugador 1,1.0,1.0
+704,papel,piedra,Jugador 1,1.0,1.0
+705,piedra,tijera,Jugador 1,1.0,1.0
+706,piedra,tijera,Jugador 1,1.0,1.0
+707,tijera,papel,Jugador 1,1.0,1.0
+708,piedra,piedra,Empate,1.0,1.0
+709,piedra,papel,Jugador 2,1.0,1.0
+710,piedra,papel,Jugador 2,1.0,1.0
+711,papel,papel,Empate,1.0,1.0
+712,papel,piedra,Jugador 1,1.0,1.0
+713,piedra,papel,Jugador 2,1.0,1.0
+714,tijera,tijera,Empate,1.0,1.0
+715,tijera,tijera,Empate,1.0,1.0
+716,papel,tijera,Jugador 2,1.0,1.0
+717,piedra,piedra,Empate,1.0,1.0
+718,piedra,piedra,Empate,1.0,1.0
+719,piedra,tijera,Jugador 1,1.0,1.0
+720,tijera,papel,Jugador 1,1.0,1.0
+721,tijera,tijera,Empate,1.0,1.0
+722,papel,piedra,Jugador 1,1.0,1.0
+723,piedra,piedra,Empate,1.0,1.0
+724,piedra,piedra,Empate,1.0,1.0
+725,piedra,piedra,Empate,1.0,1.0
+726,piedra,piedra,Empate,1.0,1.0
+727,papel,piedra,Jugador 1,1.0,1.0
+728,tijera,piedra,Jugador 2,1.0,1.0
+729,papel,piedra,Jugador 1,1.0,1.0
+730,piedra,piedra,Empate,1.0,1.0
+731,piedra,tijera,Jugador 1,1.0,1.0
+732,tijera,piedra,Jugador 2,1.0,1.0
+733,papel,tijera,Jugador 2,1.0,1.0
+734,papel,tijera,Jugador 2,1.0,1.0
+735,papel,tijera,Jugador 2,1.0,1.0
+736,tijera,tijera,Empate,1.0,1.0
+737,papel,tijera,Jugador 2,1.0,1.0
+738,piedra,tijera,Jugador 1,1.0,1.0
+739,piedra,tijera,Jugador 1,1.0,1.0
+740,papel,piedra,Jugador 1,1.0,1.0
+741,piedra,tijera,Jugador 1,1.0,1.0
+742,papel,tijera,Jugador 2,1.0,1.0
+743,piedra,piedra,Empate,1.0,1.0
+744,papel,tijera,Jugador 2,1.0,1.0
+745,piedra,tijera,Jugador 1,1.0,1.0
+746,piedra,tijera,Jugador 1,1.0,1.0
+747,piedra,piedra,Empate,1.0,1.0
+748,piedra,tijera,Jugador 1,1.0,1.0
+749,papel,piedra,Jugador 1,1.0,1.0
+750,piedra,piedra,Empate,1.0,1.0
+751,piedra,papel,Jugador 2,1.0,1.0
+752,piedra,piedra,Empate,1.0,1.0
+753,tijera,tijera,Empate,1.0,1.0
+754,tijera,tijera,Empate,1.0,1.0
+755,tijera,tijera,Empate,1.0,1.0
+756,papel,tijera,Jugador 2,1.0,1.0
+757,tijera,tijera,Empate,1.0,1.0
+758,piedra,tijera,Jugador 1,1.0,1.0
+759,tijera,piedra,Jugador 2,1.0,1.0
+760,piedra,papel,Jugador 2,1.0,1.0
+761,piedra,papel,Jugador 2,1.0,1.0
+762,tijera,piedra,Jugador 2,1.0,1.0
+763,papel,tijera,Jugador 2,1.0,1.0
+764,piedra,papel,Jugador 2,1.0,1.0
+765,tijera,tijera,Empate,1.0,1.0
+766,tijera,papel,Jugador 1,1.0,1.0
+767,piedra,papel,Jugador 2,1.0,1.0
+768,piedra,piedra,Empate,1.0,1.0
+769,piedra,tijera,Jugador 1,1.0,1.0
+770,tijera,tijera,Empate,1.0,1.0
+771,papel,tijera,Jugador 2,1.0,1.0
+772,piedra,piedra,Empate,1.0,1.0
+773,piedra,papel,Jugador 2,1.0,1.0
+774,piedra,tijera,Jugador 1,1.0,1.0
+775,papel,papel,Empate,1.0,1.0
+776,piedra,piedra,Empate,1.0,1.0
+777,papel,tijera,Jugador 2,1.0,1.0
+778,piedra,tijera,Jugador 1,1.0,1.0
+779,tijera,tijera,Empate,1.0,1.0
+780,piedra,piedra,Empate,1.0,1.0
+781,papel,piedra,Jugador 1,1.0,1.0
+782,tijera,tijera,Empate,1.0,1.0
+783,tijera,papel,Jugador 1,1.0,1.0
+784,piedra,papel,Jugador 2,1.0,1.0
+785,papel,papel,Empate,1.0,1.0
+786,piedra,piedra,Empate,1.0,1.0
+787,piedra,piedra,Empate,1.0,1.0
+788,tijera,papel,Jugador 1,1.0,1.0
+789,tijera,tijera,Empate,1.0,1.0
+790,piedra,tijera,Jugador 1,1.0,1.0
+791,papel,tijera,Jugador 2,1.0,1.0
+792,tijera,tijera,Empate,1.0,1.0
+793,tijera,tijera,Empate,1.0,1.0
+794,tijera,tijera,Empate,1.0,1.0
+795,piedra,papel,Jugador 2,1.0,1.0
+796,piedra,tijera,Jugador 1,1.0,1.0
+797,piedra,tijera,Jugador 1,1.0,1.0
+798,piedra,tijera,Jugador 1,1.0,1.0
+799,tijera,tijera,Empate,1.0,1.0
+800,papel,tijera,Jugador 2,1.0,1.0
+801,piedra,tijera,Jugador 1,1.0,1.0
+802,piedra,piedra,Empate,1.0,1.0
+803,piedra,tijera,Jugador 1,1.0,1.0
+804,piedra,papel,Jugador 2,1.0,1.0
+805,piedra,tijera,Jugador 1,1.0,1.0
+806,piedra,tijera,Jugador 1,1.0,1.0
+807,piedra,tijera,Jugador 1,1.0,1.0
+808,piedra,tijera,Jugador 1,1.0,1.0
+809,piedra,tijera,Jugador 1,1.0,1.0
+810,piedra,tijera,Jugador 1,1.0,1.0
+811,piedra,papel,Jugador 2,1.0,1.0
+812,piedra,piedra,Empate,1.0,1.0
+813,piedra,piedra,Empate,1.0,1.0
+814,piedra,papel,Jugador 2,1.0,1.0
+815,tijera,papel,Jugador 1,1.0,1.0
+816,piedra,piedra,Empate,1.0,1.0
+817,piedra,piedra,Empate,1.0,1.0
+818,piedra,piedra,Empate,1.0,1.0
+819,papel,piedra,Jugador 1,1.0,1.0
+820,papel,tijera,Jugador 2,1.0,1.0
+821,piedra,piedra,Empate,1.0,1.0
+822,papel,papel,Empate,1.0,1.0
+823,papel,tijera,Jugador 2,1.0,1.0
+824,piedra,papel,Jugador 2,1.0,1.0
+825,tijera,papel,Jugador 1,1.0,1.0
+826,papel,tijera,Jugador 2,1.0,1.0
+827,tijera,papel,Jugador 1,1.0,1.0
+828,piedra,piedra,Empate,1.0,1.0
+829,papel,papel,Empate,1.0,1.0
+830,papel,papel,Empate,1.0,1.0
+831,papel,piedra,Jugador 1,1.0,1.0
+832,tijera,papel,Jugador 1,1.0,1.0
+833,piedra,piedra,Empate,1.0,1.0
+834,papel,tijera,Jugador 2,1.0,1.0
+835,piedra,piedra,Empate,1.0,1.0
+836,papel,papel,Empate,1.0,1.0
+837,tijera,papel,Jugador 1,1.0,1.0
+838,piedra,papel,Jugador 2,1.0,1.0
+839,tijera,papel,Jugador 1,1.0,1.0
+840,papel,piedra,Jugador 1,1.0,1.0
+841,papel,papel,Empate,1.0,1.0
+842,tijera,piedra,Jugador 2,1.0,1.0
+843,papel,piedra,Jugador 1,1.0,1.0
+844,papel,piedra,Jugador 1,1.0,1.0
+845,tijera,tijera,Empate,1.0,1.0
+846,papel,tijera,Jugador 2,1.0,1.0
+847,piedra,tijera,Jugador 1,1.0,1.0
+848,tijera,tijera,Empate,1.0,1.0
+849,piedra,papel,Jugador 2,1.0,1.0
+850,papel,papel,Empate,1.0,1.0
+851,tijera,piedra,Jugador 2,1.0,1.0
+852,papel,piedra,Jugador 1,1.0,1.0
+853,piedra,papel,Jugador 2,1.0,1.0
+854,tijera,tijera,Empate,1.0,1.0
+855,tijera,tijera,Empate,1.0,1.0

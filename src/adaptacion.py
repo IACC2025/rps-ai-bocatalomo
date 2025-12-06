@@ -78,7 +78,7 @@ def probar_patron(ia: JugadorIA, patron: list, nombre_patron: str):
         print(f"  Ronda {i + 1:2d}: Humano={jugada_humano:6} | IA={jugada_ia:6} | {simbolo_resultado}")
 
         # 4. REGISTRAR: Añadir la jugada real de la ronda i al historial (tiempos ficticios)
-        ia.registrar_ronda(jugada_humano, jugada_ia, 0.5, 0.5)
+        ia.registrar_ronda(jugada_ia, jugada_humano, 0.5, 0.5)
 
         # Pequeña pausa para visualización
         time.sleep(0.05)

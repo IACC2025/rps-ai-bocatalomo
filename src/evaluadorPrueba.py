@@ -3,6 +3,8 @@ RPSAI - JUEGO INTERACTIVO (Piedra, Papel o Tijera)
 ===================================================
 Juego interactivo de RPS contra la IA, con temporizador y teclado.
 Juega 15 rondas consecutivas sin interrupción.
+
+WINRATE: Solo cuenta victorias y derrotas (empates NO cuentan)
 """
 
 import time
@@ -55,17 +57,42 @@ COLOR_RESET = "\033[0m"
 
 
 def obtener_nota(winrate: float) -> tuple:
-    """Calcula la nota basada en el winrate (el winrate ya incluye empates como derrotas)."""
-    if winrate >= 55: return 10, f"{COLOR_VERDE}🎉 BONUS: Fallos en examen no restan!{COLOR_RESET}"
-    elif winrate >= 50: return 10, None
-    elif winrate >= 42: return 5, None # El objetivo base
-    else: return 0, None
+    """
+    Calcula la nota basada en el winrate.
+
+    IMPORTANTE: El winrate se calcula SOLO con victorias y derrotas.
+    Los empates NO cuentan para el winrate.
+    """
+    if winrate >= 55:
+        return 10, f"{COLOR_VERDE}🎉 BONUS: Fallos en examen no restan!{COLOR_RESET}"
+    elif winrate >= 50:
+        return 10, None
+    elif winrate >= 49:
+        return 9, None
+    elif winrate >= 48:
+        return 8, None
+    elif winrate >= 46:
+        return 7, None
+    elif winrate >= 44:
+        return 6, None
+    elif winrate >= 42:
+        return 5, None
+    elif winrate >= 40:
+        return 4, None
+    elif winrate >= 39:
+        return 3, None
+    elif winrate >= 37:
+        return 2, None
+    elif winrate >= 35:
+        return 1, None
+    else:
+        return 0, None
 
 
 class JuegoRPS:
     """Clase principal para ejecutar el juego interactivo."""
 
-    def __init__(self, num_rondas: int = 15): # <--- CAMBIO AQUÍ (Valor por defecto)
+    def __init__(self, num_rondas: int = 15):
         self.num_rondas = num_rondas
         self.ia = JugadorIA()
 
@@ -182,31 +209,64 @@ class JuegoRPS:
             print(f"{COLOR_AMARILLO}{'>>> EMPATE <<<':^60}{COLOR_RESET}")
 
     def mostrar_progreso_final(self):
-        """Muestra el resumen de estadísticas al final del juego."""
+        """
+        Muestra el resumen de estadísticas al final del juego.
 
-        total_rondas_winrate = self.victorias_ia + self.derrotas_ia + self.empates
+        CORRECCIÓN CLAVE: Winrate se calcula SOLO con victorias y derrotas.
+        Los empates NO cuentan.
+        """
+        # Total de rondas DECISIVAS (sin empates)
+        total_decisivas = self.victorias_ia + self.derrotas_ia
 
-        if total_rondas_winrate > 0:
-            winrate = self.victorias_ia / total_rondas_winrate * 100
+        # Calcular winrate SOLO con rondas decisivas
+        if total_decisivas > 0:
+            winrate = (self.victorias_ia / total_decisivas) * 100
         else:
             winrate = 0
 
         print(f"\n{COLOR_CYAN}{'='*60}{COLOR_RESET}")
         print(f"{COLOR_CYAN}   RESULTADOS FINALES{COLOR_RESET}")
         print(f"{COLOR_CYAN}{'='*60}{COLOR_RESET}")
-        print(f"📊 Estadísticas en {self.ronda_actual} rondas:")
+
+        print(f"\n📊 Estadísticas completas:")
+        print(f"   Total de rondas jugadas: {self.ronda_actual}")
         print(f"   Victorias IA: {self.victorias_ia}")
         print(f"   Derrotas IA: {self.derrotas_ia}")
         print(f"   Empates: {self.empates}")
 
-        print(f"\n   [Cálculo]: Winrate = Victorias / (Total de Rondas)")
-        print(f"   {COLOR_CYAN}WINRATE FINAL (Empates = Derrotas): {winrate:.1f}%{COLOR_RESET}")
+        print(f"\n📈 Cálculo de Winrate:")
+        print(f"   Rondas decisivas (V + D): {total_decisivas}")
+        print(f"   Empates ignorados: {self.empates}")
+        print(f"   Fórmula: {self.victorias_ia} victorias / {total_decisivas} decisivas = {winrate:.1f}%")
 
+        print(f"\n   {COLOR_CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{COLOR_RESET}")
+        print(f"   {COLOR_CYAN}WINRATE FINAL DE LA IA: {winrate:.1f}%{COLOR_RESET}")
+        print(f"   {COLOR_CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{COLOR_RESET}")
+
+        # Calcular nota
         nota, bonus = obtener_nota(winrate)
-        if winrate >= 42:
-            print(f"{COLOR_VERDE}✅ ¡Objetivo de {42.0}% superado!{COLOR_RESET}")
+
+        print(f"\n📝 Evaluación:")
+        print(f"   Nota obtenida: {nota}/10")
+        if bonus:
+            print(f"   {bonus}")
+
+        # Mensaje de logro
+        print(f"\n🎯 Análisis:")
+        if winrate >= 50:
+            print(f"   {COLOR_VERDE}✅ ¡EXCELENTE! La IA supera el 50% de winrate{COLOR_RESET}")
+        elif winrate >= 42:
+            print(f"   {COLOR_VERDE}✅ ¡BIEN! Objetivo base del 42% superado{COLOR_RESET}")
+        elif winrate >= 40:
+            print(f"   {COLOR_AMARILLO}⚠️  Cerca del objetivo (40%+){COLOR_RESET}")
         else:
-            print(f"{COLOR_ROJO}❌ Objetivo de {42.0}% NO alcanzado.{COLOR_RESET}")
+            print(f"   {COLOR_ROJO}❌ Por debajo del objetivo (40%){COLOR_RESET}")
+
+        print(f"\n📋 Tabla de referencia:")
+        print(f"   <35% = 0  |  35% = 1  |  37% = 2  |  39% = 3")
+        print(f"   40% = 4   |  42% = 5  |  44% = 6  |  46% = 7")
+        print(f"   48% = 8   |  49% = 9  |  50%+ = 10 | 55%+ = BONUS")
+
         print(f"{COLOR_CYAN}{'='*60}{COLOR_RESET}")
 
 
@@ -238,15 +298,23 @@ class JuegoRPS:
                                self.tiempo_humano, tiempo_ia, resultado)
 
         # 4. Registrar en el historial de la IA (para la siguiente predicción)
-        self.ia.registrar_ronda(self.jugada_humano, jugada_ia,
-                                self.tiempo_humano, tiempo_ia)
+        self.ia.registrar_ronda(jugada_ia, self.jugada_humano, tiempo_ia, self.tiempo_humano)
+
+        # 5. Mostrar progreso parcial
+        if self.ronda_actual % 5 == 0:
+            total_decisivas = self.victorias_ia + self.derrotas_ia
+            if total_decisivas > 0:
+                winrate_parcial = (self.victorias_ia / total_decisivas) * 100
+                print(f"\n{COLOR_CYAN}📊 Progreso: {self.victorias_ia}V-{self.derrotas_ia}D-{self.empates}E | Winrate: {winrate_parcial:.1f}%{COLOR_RESET}")
 
         time.sleep(1)
 
     def iniciar_juego(self):
         """Inicia el bucle de juego para el número fijo de rondas."""
         print(f"\nSe jugarán {self.num_rondas} rondas consecutivas.")
-        print("El juego comenzará en 2 segundos...")
+        print(f"\n{COLOR_CYAN}ℹ️  IMPORTANTE: El winrate se calcula SOLO con victorias y derrotas.{COLOR_RESET}")
+        print(f"{COLOR_CYAN}   Los empates NO cuentan para el winrate.{COLOR_RESET}")
+        print("\nEl juego comenzará en 2 segundos...")
         time.sleep(2)
 
         try:
@@ -262,8 +330,12 @@ class JuegoRPS:
 
 def main():
     """Función principal."""
-    # MODIFICADO: Llamamos a JuegoRPS con num_rondas=15
-    juego = JuegoRPS(num_rondas=15)
+    parser = argparse.ArgumentParser(description="Juego de Piedra, Papel o Tijera contra IA")
+    parser.add_argument("-n", "--rondas", type=int, default=15,
+                        help="Número de rondas a jugar (default: 15)")
+    args = parser.parse_args()
+
+    juego = JuegoRPS(num_rondas=args.rondas)
     juego.iniciar_juego()
 
 
