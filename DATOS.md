@@ -1,6 +1,6 @@
 # Documentacion de Recogida de Datos
 
-**Alumno:** ___________________
+**Alumno:** Diego Sánchez Cano 
 
 ## Formato del CSV
 
@@ -31,7 +31,7 @@ Marca con [x] el metodo usado y describe brevemente:
 
 ### Metodo de recogida:
 
-- [ ] **Programa propio**: Cree un programa para jugar y guardar datos
+- [x] **Programa propio**: Cree un programa para jugar y guardar datos
 - [ ] **Manual**: Jugue partidas y apunte los resultados a mano
 - [ ] **Aplicacion/Web externa**: Use una app y exporte los datos
 - [ ] **Otro**: _________________
@@ -39,9 +39,8 @@ Marca con [x] el metodo usado y describe brevemente:
 ### Descripcion del proceso:
 
 ```
-(Explica aqui como recogiste los datos. Si usaste un programa,
-describe brevemente como funciona. Si fue manual, explica el proceso.)
-
+Para recoger los datos hize un pequeño programa en python que recopilaba
+los datos de las partidas a medida que se iban jugando. 
 
 
 
@@ -52,17 +51,21 @@ describe brevemente como funciona. Si fue manual, explica el proceso.)
 
 Si capturaste datos extra ademas de los basicos, marcalos aqui:
 
-- [ ] `tiempo_reaccion_ms` - Tiempo que tardo el jugador en responder
+- [X] `tiempo_reaccion_ms` - Tiempo que tardo el jugador en responder
 - [ ] `timestamp` - Fecha/hora de cada jugada
 - [ ] `sesion` - ID de sesion de juego
 - [ ] `resultado` - victoria/derrota/empate
-- [ ] Otro: _________________
+- [X] Otro: Número de ronda
 
 ### Descripcion de datos adicionales:
 
 ```
-(Si capturaste datos extra, explica aqui por que y como los usas)
-
+Al inicio utilizaba el tiempo de reacción en milisegundos en alguna 
+feature, ej: si elige tarde tiende a jugar papel, etc.
+ 
+Luego me di cuenta que esas features que tenían en cuenta el tiempo 
+de reacción solo hacían ruido y no aportaban precisión, así que las 
+descarté 
 
 ```
 
@@ -70,12 +73,12 @@ Si capturaste datos extra ademas de los basicos, marcalos aqui:
 
 ## Estadisticas del dataset
 
-- **Total de rondas:** _____
-- **Numero de sesiones/partidas:** _____
-- **Contra cuantas personas diferentes:** _____
+- **Total de rondas:** 789
+- **Numero de sesiones/partidas:** 52 sesiones de 15 rondas + 1 sesion de 8 rondas
+- **Contra cuantas personas diferentes:** más de 10 personas diferentes
 
 ### Tipo de IA:
 
 - [ ] **IA Especifica**: Entrenada para ganar a UNA persona concreta
   - Nombre/identificador del oponente: _________________
-- [ ] **IA General**: Entrenada para ganar a cualquier oponente
+- [x] **IA General**: Entrenada para ganar a cualquier oponente
