@@ -2,6 +2,7 @@
 RPSAI - Modelo OPTIMIZADO para mayor winrate
 ==============================================
 Versión optimizada: Features reducidas y más relevantes + nuevas features estratégicas
+Incluye: Detección avanzada de jugadores cíclicos - CORREGIDO
 """
 
 import os
@@ -122,14 +123,14 @@ def crear_features(df: pd.DataFrame) -> pd.DataFrame:
     df['freq_j2_papel_reciente'] = (df['jugada_j2_num'] == 1).rolling(5, min_periods=1).mean().fillna(0)
     df['freq_j2_tijera_reciente'] = (df['jugada_j2_num'] == 2).rolling(5, min_periods=1).mean().fillna(0)
 
-    # ========== GRUPO 4: FRECUENCIAS MUY RECIENTES (ventana 3) - NUEVO ==========
+    # ========== GRUPO 4: FRECUENCIAS MUY RECIENTES (ventana 3) ==========
     df['freq_j2_piedra_muy_reciente'] = (df['jugada_j2_num'] == 0).rolling(3, min_periods=1).mean().fillna(0)
     df['freq_j2_papel_muy_reciente'] = (df['jugada_j2_num'] == 1).rolling(3, min_periods=1).mean().fillna(0)
     df['freq_j2_tijera_muy_reciente'] = (df['jugada_j2_num'] == 2).rolling(3, min_periods=1).mean().fillna(0)
 
     # ========== GRUPO 5: RESULTADOS Y RACHAS ==========
     df['resultado_anterior'] = df['resultado'].shift(1).fillna(0)
-    df['resultado_lag2'] = df['resultado'].shift(2).fillna(0)  # NUEVO
+    df['resultado_lag2'] = df['resultado'].shift(2).fillna(0)
 
     # Racha optimizada
     def calcular_racha(resultados):
@@ -145,44 +146,111 @@ def crear_features(df: pd.DataFrame) -> pd.DataFrame:
     # ========== GRUPO 6: PATRONES DE CAMBIO ==========
     df['cambio_j2'] = (df['jugada_j2_num'] != df['jugada_j2_lag1']).astype(int).fillna(0)
 
-    # Tasa de cambios reciente (ventana 5) - NUEVO
+    # Tasa de cambios reciente (ventana 5)
     df['tasa_cambios_reciente'] = df['cambio_j2'].rolling(5, min_periods=1).mean().fillna(0)
 
-    # ========== GRUPO 7: PATRONES CÍCLICOS - NUEVO ==========
-    # Detectar si el oponente sigue un patrón cíclico (piedra->papel->tijera)
-    def es_ciclo(j1, j2, j3):
-        """Detecta si las 3 últimas jugadas forman un ciclo."""
-        if pd.isna(j1) or pd.isna(j2) or pd.isna(j3):
+    # ========== GRUPO 7: PATRONES CÍCLICOS - MEJORADO ==========
+    # Detectar si el oponente sigue un patrón cíclico
+
+    def detectar_ciclo_ascendente(j_actual, j1, j2):
+        """Detecta ciclo: 0->1->2 (piedra->papel->tijera)"""
+        if pd.isna(j_actual) or pd.isna(j1) or pd.isna(j2):
             return 0
-        # Ciclo ascendente: 0->1->2 o 1->2->0 o 2->0->1
-        if (j3 == 0 and j2 == 2 and j1 == 1) or \
-           (j3 == 1 and j2 == 0 and j1 == 2) or \
-           (j3 == 2 and j2 == 1 and j1 == 0):
+        # Ciclo completo: 0->1->2 o 1->2->0 o 2->0->1
+        if (j2 == 0 and j1 == 1 and j_actual == 2) or \
+           (j2 == 1 and j1 == 2 and j_actual == 0) or \
+           (j2 == 2 and j1 == 0 and j_actual == 1):
             return 1
         return 0
 
-    df['patron_ciclico'] = df.apply(
-        lambda row: es_ciclo(row['jugada_j2_lag1'], row['jugada_j2_lag2'], row['jugada_j2_lag3']),
-        axis=1
+    def detectar_ciclo_descendente(j_actual, j1, j2):
+        """Detecta ciclo inverso: 2->1->0 (tijera->papel->piedra)"""
+        if pd.isna(j_actual) or pd.isna(j1) or pd.isna(j2):
+            return 0
+        # Ciclo inverso: 2->1->0 o 1->0->2 o 0->2->1
+        if (j2 == 2 and j1 == 1 and j_actual == 0) or \
+           (j2 == 1 and j1 == 0 and j_actual == 2) or \
+           (j2 == 0 and j1 == 2 and j_actual == 1):
+            return 1
+        return 0
+
+    # Aplicar detección
+    df['ciclo_ascendente'] = df.apply(
+        lambda row: detectar_ciclo_ascendente(
+            row['jugada_j2_num'], row['jugada_j2_lag1'], row['jugada_j2_lag2']
+        ), axis=1
     )
 
-    # ========== GRUPO 8: REPETICIONES - NUEVO ==========
+    df['ciclo_descendente'] = df.apply(
+        lambda row: detectar_ciclo_descendente(
+            row['jugada_j2_num'], row['jugada_j2_lag1'], row['jugada_j2_lag2']
+        ), axis=1
+    )
+
+    # Cualquier tipo de ciclo
+    df['patron_ciclico'] = ((df['ciclo_ascendente'] == 1) | (df['ciclo_descendente'] == 1)).astype(int)
+
+    # Contador de ciclos consecutivos (cuántos ciclos seguidos)
+    def contar_ciclos_consecutivos(serie_ciclos):
+        """Cuenta cuántos ciclos ha hecho consecutivamente"""
+        contador = 0
+        for val in reversed(serie_ciclos):
+            if val == 1:
+                contador += 1
+            else:
+                break
+        return contador
+
+    df['ciclos_consecutivos'] = df['patron_ciclico'].rolling(
+        window=10, min_periods=1
+    ).apply(lambda x: contar_ciclos_consecutivos(x.values), raw=False).fillna(0)
+
+    # Tasa de ciclos en ventana reciente
+    df['tasa_ciclos_reciente'] = df['patron_ciclico'].rolling(6, min_periods=1).mean().fillna(0)
+
+    # Predecir siguiente jugada si está en ciclo
+    def predecir_siguiente_en_ciclo(ciclo_asc, ciclo_desc, ultima_jugada):
+        """Si está en un ciclo, predice la siguiente jugada del ciclo"""
+        if pd.isna(ultima_jugada):
+            return -1
+
+        ultima = int(ultima_jugada)
+
+        # Si detectó ciclo ascendente, la siguiente será +1 (mod 3)
+        if ciclo_asc == 1:
+            return (ultima + 1) % 3
+
+        # Si detectó ciclo descendente, la siguiente será -1 (mod 3)
+        if ciclo_desc == 1:
+            return (ultima - 1) % 3
+
+        return -1  # No hay ciclo
+
+    df['prediccion_ciclo'] = df.apply(
+        lambda row: predecir_siguiente_en_ciclo(
+            row['ciclo_ascendente'],
+            row['ciclo_descendente'],
+            row['jugada_j2_num']
+        ), axis=1
+    )
+
+    # ========== GRUPO 8: REPETICIONES ==========
     # ¿El oponente repite la misma jugada?
     df['repite_jugada'] = (df['jugada_j2_lag1'] == df['jugada_j2_lag2']).astype(int).fillna(0)
 
-    # ========== GRUPO 9: REACCIÓN A RESULTADOS - NUEVO ==========
+    # ========== GRUPO 9: REACCIÓN A RESULTADOS ==========
     # ¿Cambia después de perder?
     df['cambio_tras_victoria_ia'] = ((df['resultado_anterior'] == 1) & (df['cambio_j2'] == 1)).astype(int)
     df['repite_tras_derrota_ia'] = ((df['resultado_anterior'] == -1) & (df['repite_jugada'] == 1)).astype(int)
 
-    # ========== GRUPO 10: DIVERSIDAD - NUEVO ==========
+    # ========== GRUPO 10: DIVERSIDAD ==========
     # ¿Cuántas jugadas diferentes ha usado en las últimas 5 rondas?
     def calcular_diversidad(serie):
         return len(set(serie)) if len(serie) > 0 else 1
 
     df['diversidad_reciente'] = df['jugada_j2_num'].rolling(5, min_periods=1).apply(calcular_diversidad, raw=False).fillna(1)
 
-    # ========== GRUPO 11: CONTRA-PREDICCIÓN - NUEVO ==========
+    # ========== GRUPO 11: CONTRA-PREDICCIÓN ==========
     # ¿El oponente juega lo que gana a la jugada anterior de la IA?
     def es_contra_prediccion(jugada_j2, jugada_j1_anterior):
         if pd.isna(jugada_j2) or pd.isna(jugada_j1_anterior):
@@ -219,7 +287,7 @@ def seleccionar_features(df: pd.DataFrame) -> tuple:
         # Frecuencias recientes
         'freq_j2_piedra_reciente', 'freq_j2_papel_reciente', 'freq_j2_tijera_reciente',
 
-        # Frecuencias muy recientes (NUEVO)
+        # Frecuencias muy recientes
         'freq_j2_piedra_muy_reciente', 'freq_j2_papel_muy_reciente', 'freq_j2_tijera_muy_reciente',
 
         # Resultados
@@ -228,16 +296,20 @@ def seleccionar_features(df: pd.DataFrame) -> tuple:
         # Patrones de cambio
         'cambio_j2', 'tasa_cambios_reciente',
 
-        # Patrones cíclicos y repeticiones (NUEVO)
-        'patron_ciclico', 'repite_jugada',
+        # Patrones cíclicos MEJORADOS
+        'patron_ciclico', 'ciclo_ascendente', 'ciclo_descendente',
+        'ciclos_consecutivos', 'tasa_ciclos_reciente', 'prediccion_ciclo',
 
-        # Reacciones (NUEVO)
+        # Repeticiones
+        'repite_jugada',
+
+        # Reacciones
         'cambio_tras_victoria_ia', 'repite_tras_derrota_ia',
 
-        # Diversidad (NUEVO)
+        # Diversidad
         'diversidad_reciente',
 
-        # Contra-predicción (NUEVO)
+        # Contra-predicción
         'es_contra_prediccion', 'tasa_contra_prediccion'
     ]
 
@@ -267,21 +339,21 @@ def entrenar_modelo(X, y, test_size: float = 0.2):
 
     modelos = {
         'Random Forest': RandomForestClassifier(
-            n_estimators=200,  # Aumentado de 150
-            max_depth=15,      # Aumentado de 12
-            min_samples_split=5,  # NUEVO
-            min_samples_leaf=2,   # NUEVO
+            n_estimators=200,
+            max_depth=15,
+            min_samples_split=5,
+            min_samples_leaf=2,
             random_state=42,
             class_weight=pesos_dict
         ),
         'Gradient Boosting': GradientBoostingClassifier(
-            n_estimators=150,      # Aumentado de 100
-            learning_rate=0.08,    # Reducido de 0.1
-            max_depth=10,          # Aumentado de 8
-            min_samples_split=5,   # NUEVO
+            n_estimators=150,
+            learning_rate=0.08,
+            max_depth=10,
+            min_samples_split=5,
             random_state=42
         ),
-        'KNN (k=7)': KNeighborsClassifier(n_neighbors=7),  # Cambiado de 5 a 7
+        'KNN (k=7)': KNeighborsClassifier(n_neighbors=7),
     }
 
     mejor_modelo = None
@@ -331,7 +403,7 @@ def cargar_modelo(ruta: str = None):
 
 
 # =============================================================================
-# JUGADOR IA (OPTIMIZADO)
+# JUGADOR IA (OPTIMIZADO Y CORREGIDO)
 # =============================================================================
 
 class JugadorIA:
@@ -348,7 +420,9 @@ class JugadorIA:
             'freq_j2_piedra_muy_reciente', 'freq_j2_papel_muy_reciente', 'freq_j2_tijera_muy_reciente',
             'resultado_anterior', 'resultado_lag2', 'racha',
             'cambio_j2', 'tasa_cambios_reciente',
-            'patron_ciclico', 'repite_jugada',
+            'patron_ciclico', 'ciclo_ascendente', 'ciclo_descendente',
+            'ciclos_consecutivos', 'tasa_ciclos_reciente', 'prediccion_ciclo',
+            'repite_jugada',
             'cambio_tras_victoria_ia', 'repite_tras_derrota_ia',
             'diversidad_reciente',
             'es_contra_prediccion', 'tasa_contra_prediccion'
@@ -463,7 +537,7 @@ class JugadorIA:
         return sum([equilibrado, cambios_frecuentes, sin_patron]) >= 2
 
     def predecir_jugada_oponente(self) -> str:
-        """Predice la próxima jugada con lógica optimizada."""
+        """Predice la próxima jugada con lógica optimizada - CORREGIDO."""
         if self.modelo is None or len(self.historial) < 3:
             return np.random.choice(["piedra", "papel", "tijera"])
 
@@ -472,9 +546,34 @@ class JugadorIA:
             ultimas_5_ia = [j[0] for j in self.historial[-5:]]
             if len(set(ultimas_5_ia)) == 1:
                 jugada_repetida_ia = ultimas_5_ia[0]
-                print(f"   🚨 ANTI-BUCLE: IA jugó {jugada_repetida_ia.upper()} 5 veces seguidas")
+                print(f"ya se tu próxima jugada JIJIJI")
                 opciones = [j for j in ["piedra", "papel", "tijera"] if j != jugada_repetida_ia]
                 return np.random.choice(opciones)
+
+        # DETECTOR DE JUGADOR CÍCLICO - ✅ CORREGIDO
+        if len(self.historial) >= 6:
+            features = self.obtener_features_actuales()
+            if features is not None and len(features) == len(self.feature_cols):
+                try:
+                    # Índices de las features cíclicas
+                    idx_ciclos_consec = self.feature_cols.index('ciclos_consecutivos')
+                    idx_tasa_ciclos = self.feature_cols.index('tasa_ciclos_reciente')
+                    idx_pred_ciclo = self.feature_cols.index('prediccion_ciclo')
+
+                    ciclos_consecutivos = features[idx_ciclos_consec]
+                    tasa_ciclos = features[idx_tasa_ciclos]
+                    pred_ciclo = int(features[idx_pred_ciclo])
+
+                    # Si ha hecho 3+ ciclos consecutivos O tasa > 70%
+                    if ciclos_consecutivos >= 3 or tasa_ciclos > 0.7:
+                        if pred_ciclo != -1:  # Si hay predicción de ciclo válida
+                            jugada_predicha_humano = NUM_A_JUGADA[pred_ciclo]
+                            # ✅ CONTRA-JUGAR: Jugar lo que GANA contra la predicción
+                            jugada_ia = PIERDE_CONTRA[jugada_predicha_humano]
+                            print(f"ya te estoy pillando MUEJEJE")
+                            return jugada_ia
+                except (ValueError, IndexError):
+                    pass  # Si hay error, continuar con la lógica normal
 
         # DETECTOR DE META-JUEGO (REDUCIDO umbral a 55%)
         if len(self.historial) >= 5:
@@ -483,13 +582,12 @@ class JugadorIA:
 
             # Umbral reducido de 0.6 a 0.55
             if tasa_contra > 0.55:
-                #print(f"   🎯 DETECTADO: Humano intenta predecir la IA ({tasa_contra:.0%})")
                 ultima_jugada_ia = self.historial[-1][0]
                 prediccion_meta = PIERDE_CONTRA[ultima_jugada_ia]
 
                 # Aumentado de 0.7 a 0.75
                 if np.random.random() < 0.75:
-                    print(f"   ↳ Meta-predicción: Esperamos '{prediccion_meta}'")
+                    print(f"te voy a ganar MUAJAJA")
                     return prediccion_meta
                 else:
                     return np.random.choice(["piedra", "papel", "tijera"])
