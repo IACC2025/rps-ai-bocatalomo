@@ -47,6 +47,17 @@ env/
 # data/partidas.csv
 # models/*.pkl
 
+# Producción
+.env
+.env.local
+.env.production
+*.log
+nohup.out
+
+# PostgreSQL local
+*.db
+*.sqlite3
+
 # Sistema
 .DS_Store
 Thumbs.db

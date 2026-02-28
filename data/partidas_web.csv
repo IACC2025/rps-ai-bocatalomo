@@ -1,0 +1,15 @@
+Ronda,Jugador 1,Jugador 2,Ganador,Tiempo Jugador 1,Tiempo Jugador 2,Timestamp
+1,papel,piedra,Jugador 1,0.0,0.0,2026-02-28T17:20:46.751383
+2,papel,piedra,Jugador 1,0.0,0.0,2026-02-28T17:21:39.793767
+3,tijera,piedra,Jugador 2,0.0,0.0,2026-02-28T17:23:45.053851
+4,papel,papel,Empate,0.0,0.0,2026-02-28T17:23:49.102379
+5,piedra,tijera,Jugador 1,0.0,0.0,2026-02-28T17:23:55.822557
+6,piedra,piedra,Empate,0.0,0.0,2026-02-28T17:24:03.984126
+7,tijera,piedra,Jugador 2,0.0,0.0,2026-02-28T17:24:10.262372
+8,tijera,papel,Jugador 1,0.0,0.0,2026-02-28T17:24:17.173888
+9,tijera,piedra,Jugador 2,0.0,0.0,2026-02-28T17:24:26.053027
+10,piedra,piedra,Empate,0.0,0.0,2026-02-28T17:24:32.501995
+11,piedra,tijera,Jugador 1,0.0,0.0,2026-02-28T17:24:37.860435
+12,piedra,papel,Jugador 2,0.0,0.0,2026-02-28T17:24:49.957800
+13,piedra,piedra,Empate,0.0,0.0,2026-02-28T17:24:57.760950
+14,piedra,piedra,Empate,0.0,0.0,2026-02-28T17:25:03.769826

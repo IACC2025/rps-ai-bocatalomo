@@ -1,0 +1,21 @@
+services:
+  # Servidor Flask de IA
+  - type: web
+    name: rps-ia-api
+    env: python
+    region: frankfurt  # Cambiar si prefieres otra región
+    buildCommand: pip install -r requirements-prod.txt
+    startCommand: gunicorn api_production:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.6
+      - key: ALLOWED_ORIGINS
+        sync: false
+    healthCheckPath: /health
+
+databases:
+  # Base de datos PostgreSQL para persistencia
+  - name: rps-ia-db
+    databaseName: rps_partidas
+    user: rps_user
+    region: frankfurt
